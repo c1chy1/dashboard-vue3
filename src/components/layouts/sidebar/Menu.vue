@@ -7,7 +7,6 @@
         >
             <template #header>
                 <va-sidebar-item
-                    :active="isRouteActive(item)"
                     active-class="sidebar-item--active-custom"
                     :to="item.path"
                 >
@@ -63,7 +62,7 @@ const autoExpand = ref(false)
 
 
 
-const isRouteActive = (item, expandMenu) => {
+const isRouteActive = (item :any, expandMenu : any) => {
   if (item.title === route.name) {
     // sidebar item's title must match route name in router
     if (expandMenu && !autoExpand.value) {
