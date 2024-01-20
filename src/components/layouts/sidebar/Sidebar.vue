@@ -63,7 +63,7 @@
           >
             <VaSidebarItemContent>
               <VaIcon :name="item.icon" />
-              <VaSidebarItemTitle  v-if="!minimized"  >{{ item.title }}</VaSidebarItemTitle>
+              <VaSidebarItemTitle  v-if="!minimized">{{ item.title }}</VaSidebarItemTitle>
             </VaSidebarItemContent>
           </VaSidebarItem>
         </template>
