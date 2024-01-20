@@ -1,5 +1,5 @@
 <template>
-    <div class="layout fluid gutter--xl">
+    <div class="">
 
       <h1>DASHBOARD</h1>
     </div>

@@ -10,11 +10,11 @@ export const useNavigation =
         navigation: reactive([{
           title: 'Dashboard',
           path: "/dashboard",
-          image:'',
+          icon:'dashboard',
           active:true},
           {
             title: "WIDGETS",
-       /*     icon: "Widgets1",*/
+            icon: "statistics",
           sub: [
             {
               title: "Widgets1",
