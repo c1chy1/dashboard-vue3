@@ -19,7 +19,7 @@
           <VaCollapse
             class="sidebar-item"
             v-if="item.children"
-            v-model="item.collapse"
+            v-model="item.isCollapsed"
             :icon="item.icon"
             :key="item.title + 'collapse'"
             body-color="#00000022"
