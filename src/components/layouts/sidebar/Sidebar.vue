@@ -4,8 +4,12 @@
 
 
     <VaSidebar
-      class="sidebar "
+      class="sidebar"
       :class="{ 'sidebar--expanded': !minimized }"
+
+      :style="{
+        '--va-sidebar-menu-overflow-y': 'hidden',
+      }"
       :minimized="minimized"
       minimizedWidth="64px"
     >
@@ -14,10 +18,12 @@
         v-model="minimized"
         class="mt-2"
       />
-      <VaAccordion>
+
+      <VaAccordion
+        class="mt-2">
         <template v-for="item in items">
           <VaCollapse
-            class="sidebar-item"
+
             v-if="item.children"
             v-model="item.isCollapsed"
             :icon="item.icon"
@@ -26,7 +32,7 @@
           >
             <template #header="{ value: isCollapsed }">
               <VaSidebarItem
-
+                class="sidebar-item"
                 active-class="sidebar-item--active-custom"
                 :active="isRouteActive(item, item)"
               >
@@ -41,6 +47,7 @@
 
             <template #body>
               <VaSidebarItem
+                class="sidebar-item"
                 v-for="child in item.children"
                 :key="child.title"
                 :to="child.path"
@@ -87,7 +94,7 @@ let minimized = ref(false)
 
 const items = [
   { title: 'Dashboard', icon: 'dashboard' },
-  { title: 'Widgets', icon: 'mail', children: [
+  { title: 'widgets', icon: 'mail', children: [
       {   title: "Widgets1", icon: 'send' ,   path: "/dashboard/widgets1",  },
       { title: "Widgets2", icon: 'drafts',   path: "/dashboard/widgets2", },
       { title: "Widgets3", icon: 'settings',   path: "/dashboard/widgets3", },
@@ -126,6 +133,7 @@ const isRouteActive = (item :any, expandMenu : any) => {
 
 .sidebar-item {
   cursor: pointer;
+
 }
 
 /* override UI lib */
@@ -152,14 +160,23 @@ const isRouteActive = (item :any, expandMenu : any) => {
   width: var(--sidebar-width);
   height: 100%;
   flex-shrink: 0;
+  overflow-x:auto ;
 }
 .va-checkbox {
   --va-checkbox-background: #a28d8d;
   --va-checkbox-square-border: 1px black solid;
 }
+
+.va-sidebar__menu {
+
+  overflow: hidden;
+  --va-sidebar-menu-overflow-x : hidden;
+  --va-sidebar-menu-overflow-y : hidden
+}
 .sidebar.sidebar--expanded {
   @include respond-to("small") {
     width: 100vw !important;
+
   }
 }
 
