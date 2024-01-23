@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 
+
+
+
 .transition-colors {
     transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;
     transition-timing-function:cubic-bezier(.4,0,.2,1);
@@ -157,3 +160,6 @@
     transition-timing-function:cubic-bezier(.4,0,.2,1);
     transition-duration:.15s
 }
+
+
+
