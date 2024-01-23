@@ -5,23 +5,37 @@
   <main class="swappable-wrapper grid grid-cols-12 gap-4 w-full h-full p-4">
     <div class="col-span-9 grid grid-rows-6 gap-4">
       <div class="row-span-4 box">
-        <WidgetGallery class="swappable-item transition-colors" />
+        <WidgetGallery
+                        @click="drag"
+                       :style="dragBg ? 'hidden' : ''"
+                       class="swappable-item transition-colors" />
       </div>
       <div class="row-span-2 grid grid-cols-12 gap-4">
         <div class="col-span-5 box">
-          <WidgetCamera class="swappable-item transition-colors" />
+          <WidgetCamera @click="drag"
+                        :style="dragBg ? 'hidden' : ''"
+                        class="swappable-item transition-colors" />
         </div>
         <div class="col-span-7 box">
-          <WidgetVideo class="swappable-item transition-colors" />
+          <WidgetVideo
+             @click="drag"
+            :style="dragBg ? 'hidden' : ''"
+            class="swappable-item transition-colors" />
         </div>
       </div>
     </div>
     <div class="col-span-3 grid grid-rows-6 gap-4">
       <div class="row-span-2 box">
-        <WidgetGame class="swappable-item transition-colors" />
+        <WidgetGame
+           @click="drag"
+          :style="dragBg ? 'hidden' : ''"
+          class="swappable-item transition-colors" />
       </div>
       <div class="row-span-4 box">
-        <WidgetMusic class="swappable-item transition-colors" />
+        <WidgetMusic
+          @click="drag"
+          :style="dragBg ? 'hidden' : ''"
+          class="swappable-item transition-colors" />
       </div>
     </div>
   </main>
@@ -37,7 +51,14 @@ import WidgetVideo from '@/components/widgets/WidgetVideo.vue';
 import WidgetCamera from '@/components/widgets/WidgetCamera.vue';
 import WidgetGame from '@/components/widgets/WidgetGame.vue';
 import WidgetMusic from '@/components/widgets/WidgetMusic.vue';
-import { onMounted } from 'vue';
+import { onMounted , ref } from 'vue';
+
+
+const dragBg = ref(false)
+
+function drag() {
+  dragBg.value = !dragBg.value
+}
 
 onMounted(() => {
   const containerSelector = '.swappable-wrapper';
@@ -52,3 +73,163 @@ onMounted(() => {
   });
 });
 </script>
+
+<style scoped>
+
+.transition-colors {
+  transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;
+  transition-timing-function:cubic-bezier(.4,0,.2,1);
+  transition-duration:.15s
+}
+@keyframes animateBackground {
+  0% {
+    transform:translateZ(0)
+  }
+  to {
+    transform:translate3d(0,-396px,0)
+  }
+}
+.box {
+  border-radius:.5rem;
+  --tw-bg-opacity: 1;
+  background-color:rgb(255 255 255 / var(--tw-bg-opacity));
+  padding:1rem;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)
+}
+.stripes-animated {
+  display:none;
+  background:repeating-linear-gradient(45deg,rgb(203 213 225),rgb(203 213 225) 70px,rgb(148 163 184) 70px,rgb(148 163 184) 140px);
+  position:absolute;
+  top:0;
+  left:0;
+  height:400%;
+  width:100%;
+  opacity:.2;
+  animation:animateBackground 5s linear infinite
+}
+.center-content {
+  position:relative;
+  display:flex;
+  height:100%;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border-radius:.375rem;
+  --tw-bg-opacity: 1;
+  background-color:rgb(241 245 249 / var(--tw-bg-opacity))
+}
+.widget-icon {
+  border-radius:9999px;
+  background-color:#e2e8f099;
+  padding:1.25rem
+}
+@keyframes jelly {
+  0% {
+    transform:scale(1)
+  }
+  4% {
+    transform:scale(.947,.961)
+  }
+  6% {
+    transform:scale(.967,.99)
+  }
+  8% {
+    transform:scale(.999,1.034)
+  }
+  10% {
+    transform:scale(1.033,1.075)
+  }
+  12% {
+    transform:scale(1.041,1.084)
+  }
+  14% {
+    transform:scale(1.068,1.1)
+  }
+  16% {
+    transform:scale(1.071,1.1)
+  }
+  18% {
+    transform:scale(1.081,1.086)
+  }
+  20% {
+    transform:scale(1.082,1.078)
+  }
+  22% {
+    transform:scale(1.079,1.06)
+  }
+  25% {
+    transform:scale(1.073,1.044)
+  }
+  27% {
+    transform:scale(1.07,1.041)
+  }
+  30% {
+    transform:scale(1.059,1.035)
+  }
+  31% {
+    transform:scale(1.057,1.035)
+  }
+  36% {
+    transform:scale(1.047,1.044)
+  }
+  38% {
+    transform:scale(1.046,1.047)
+  }
+  42% {
+    transform:scale(1.044,1.053)
+  }
+  45% {
+    transform:scale(1.045,1.055)
+  }
+  53% {
+    transform:scale(1.049,1.051)
+  }
+  60% {
+    transform:scale(1.051,1.049)
+  }
+  75% {
+    transform:scale(1)
+  }
+  to {
+    transform:scale(1)
+  }
+}
+.jelly-animation {
+  animation:jelly 1s linear both
+}
+.draggable-mirror {
+  border-width:2px;
+  --tw-border-opacity: 1;
+  border-color:rgb(237 184 99 / var(--tw-border-opacity));
+  background-color:rgb(242 204 142 / var(--tw-bg-opacity));
+  --tw-bg-opacity: .8;
+  --tw-backdrop-blur: blur(4px);
+  -webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  transition-property:height,width;
+  transition-timing-function:cubic-bezier(.4,0,.2,1);
+  transition-duration:.15s
+}
+.draggable--over {
+  border-width:2px;
+  --tw-border-opacity: 1;
+  border-color:rgb(203 213 225 / var(--tw-border-opacity))
+}
+.draggable--over .stripes-animated {
+  display:block
+}
+.draggable-source--placed {
+  border-width:2px;
+  --tw-border-opacity: 1;
+  border-color:rgb(210 139 24 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color:rgb(242 204 142 / var(--tw-bg-opacity));
+  transition-property:all;
+  transition-timing-function:cubic-bezier(.4,0,.2,1);
+  transition-duration:.15s
+}
+
+
+</style>

@@ -3,117 +3,157 @@
 @tailwind utilities;
 
 
+.transition-colors {
+    transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;
+    transition-timing-function:cubic-bezier(.4,0,.2,1);
+    transition-duration:.15s
+}
 @keyframes animateBackground {
     0% {
-        transform: translate3d(0,0,0);
+        transform:translateZ(0)
     }
-    100% {
-        transform: translate3d(0,-396px,0);
+    to {
+        transform:translate3d(0,-396px,0)
     }
 }
-
 .box {
-    @apply shadow-lg bg-white rounded-lg p-4;
+    border-radius:.5rem;
+    --tw-bg-opacity: 1;
+    background-color:rgb(255 255 255 / var(--tw-bg-opacity));
+    padding:1rem;
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+    box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)
 }
-
 .stripes-animated {
-    display: none;
-    background: repeating-linear-gradient(
-            45deg,
-            rgb(203 213 225),
-            rgb(203 213 225) 70px,
-            rgb(148 163 184) 70px,
-            rgb(148 163 184) 140px
-    );
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 400%;
-    width: 100%;
-    opacity: 0.2;
-    animation: animateBackground 5s linear infinite;
+    display:none;
+    background:repeating-linear-gradient(45deg,rgb(203 213 225),rgb(203 213 225) 70px,rgb(148 163 184) 70px,rgb(148 163 184) 140px);
+    position:absolute;
+    top:0;
+    left:0;
+    height:400%;
+    width:100%;
+    opacity:.2;
+    animation:animateBackground 5s linear infinite
 }
-
 .center-content {
-    @apply flex relative overflow-hidden items-center justify-center h-full rounded-md bg-slate-100;
+    position:relative;
+    display:flex;
+    height:100%;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    border-radius:.375rem;
+    --tw-bg-opacity: 1;
+    background-color:rgb(241 245 249 / var(--tw-bg-opacity))
 }
-
 .widget-icon {
-    @apply bg-slate-200/60 p-5 rounded-full;
+    border-radius:9999px;
+    background-color:#e2e8f099;
+    padding:1.25rem
 }
-
 @keyframes jelly {
     0% {
-        transform: scale(1, 1);
+        transform:scale(1)
     }
     4% {
-        transform: scale(0.947, 0.961);
+        transform:scale(.947,.961)
     }
     6% {
-        transform: scale(0.967, 0.99);
+        transform:scale(.967,.99)
     }
     8% {
-        transform: scale(0.999, 1.034);
+        transform:scale(.999,1.034)
     }
     10% {
-        transform: scale(1.033, 1.075);
+        transform:scale(1.033,1.075)
     }
     12% {
-        transform: scale(1.041, 1.084);
+        transform:scale(1.041,1.084)
     }
     14% {
-        transform: scale(1.068, 1.1);
+        transform:scale(1.068,1.1)
     }
     16% {
-        transform: scale(1.071, 1.1);
+        transform:scale(1.071,1.1)
     }
     18% {
-        transform: scale(1.081, 1.086);
+        transform:scale(1.081,1.086)
     }
     20% {
-        transform: scale(1.082, 1.078);
+        transform:scale(1.082,1.078)
     }
     22% {
-        transform: scale(1.079, 1.06);
+        transform:scale(1.079,1.06)
     }
     25% {
-        transform: scale(1.073, 1.044);
+        transform:scale(1.073,1.044)
     }
     27% {
-        transform: scale(1.07, 1.041);
+        transform:scale(1.07,1.041)
     }
     30% {
-        transform: scale(1.059, 1.035);
+        transform:scale(1.059,1.035)
     }
     31% {
-        transform: scale(1.057, 1.035);
+        transform:scale(1.057,1.035)
     }
     36% {
-        transform: scale(1.047, 1.044);
+        transform:scale(1.047,1.044)
     }
     38% {
-        transform: scale(1.046, 1.047);
+        transform:scale(1.046,1.047)
     }
     42% {
-        transform: scale(1.044, 1.053);
+        transform:scale(1.044,1.053)
     }
     45% {
-        transform: scale(1.045, 1.055);
+        transform:scale(1.045,1.055)
     }
     53% {
-        transform: scale(1.049, 1.051);
+        transform:scale(1.049,1.051)
     }
     60% {
-        transform: scale(1.051, 1.049);
+        transform:scale(1.051,1.049)
     }
     75% {
-        transform: scale(1, 1);
+        transform:scale(1)
     }
-    100% {
-        transform: scale(1, 1);
+    to {
+        transform:scale(1)
     }
 }
-
 .jelly-animation {
-    animation: jelly 1s linear both;
+    animation:jelly 1s linear both
+}
+.draggable-mirror {
+    border-width:2px;
+    --tw-border-opacity: 1;
+    border-color:rgb(237 184 99 / var(--tw-border-opacity));
+    background-color:rgb(242 204 142 / var(--tw-bg-opacity));
+    --tw-bg-opacity: .8;
+    --tw-backdrop-blur: blur(4px);
+    -webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    transition-property:height,width;
+    transition-timing-function:cubic-bezier(.4,0,.2,1);
+    transition-duration:.15s
+}
+.draggable--over {
+    border-width:2px;
+    --tw-border-opacity: 1;
+    border-color:rgb(203 213 225 / var(--tw-border-opacity))
+}
+.draggable--over .stripes-animated {
+    display:block
+}
+.draggable-source--placed {
+    border-width:2px;
+    --tw-border-opacity: 1;
+    border-color:rgb(210 139 24 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color:rgb(242 204 142 / var(--tw-bg-opacity));
+    transition-property:all;
+    transition-timing-function:cubic-bezier(.4,0,.2,1);
+    transition-duration:.15s
 }
