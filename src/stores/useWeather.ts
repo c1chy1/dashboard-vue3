@@ -37,6 +37,11 @@ export const useWeather = defineStore('useWeather', {
       console.log(this.dailyWeather)
 
       }
+
+
+
     },
+
+
 
 });

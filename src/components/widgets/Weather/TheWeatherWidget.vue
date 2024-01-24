@@ -29,7 +29,7 @@
           </div>
 
           <div class="mt-5 overflow-x-auto">
-            <ForecastDays
+            <DayPicker
               :forecastWeather="Weather.dailyWeather.list"
             />
           </div>
@@ -45,7 +45,7 @@ import { onMounted } from 'vue'
 import CurrentWeatherDetails from '@/components/widgets/Weather/currentWeather/CurrentWeatherDetails.vue'
 import CurrentWeatherTemperature from '@/components/widgets/Weather/currentWeather/CurrentWeatherTemperature.vue'
 import CurrentWeatherIcon from '@/components/widgets/Weather/currentWeather/CurrentWeatherIcon.vue'
-import ForecastDays from '@/components/widgets/Weather/ForecastDays.vue'
+import DayPicker from '@/components/widgets/Weather/DayPicker.vue'
 const Weather = useWeather();
 
 
