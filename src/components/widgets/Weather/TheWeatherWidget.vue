@@ -5,30 +5,36 @@
         Weather Widget
       </h1>
 
-      <p class="mb-6 text-lg text-center font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-        - A simple widget made with Vue3 -
-      </p>
-
-
+      <section   v-if="Weather.currentWeather">
         <div class="flex flex-wrap bg-white py-10 rounded-lg bg-opacity-30 px-4">
-          <div class="flex flex-col md:flex-row w-full"
-               v-if="locationWeather.currentWeather"
-          >
+
+          <div class="flex flex-col md:flex-row w-full">
+            <div class="flex flex-row">
+              <CurrentWeatherIcon
+                :weather="Weather.currentWeather.weather"
+              />
+              <CurrentWeatherTemperature
+                :temperature="Weather.currentWeather.main.temp"
+              />
+            </div>
             <CurrentWeatherDetails
-              :feelsLike="locationWeather.currentWeather.main.feels_like"
-              :pressure="locationWeather.currentWeather.main.pressure"
-              :humidity="locationWeather.currentWeather.main.humidity"
-              :windSpeed="locationWeather.currentWeather.wind.speed"
-              :windDeg="locationWeather.currentWeather.wind.deg"
-              :clouds="locationWeather.currentWeather.clouds.all"
+              :feelsLike="Weather.currentWeather.main.feels_like"
+              :pressure="Weather.currentWeather.main.pressure"
+              :humidity="Weather.currentWeather.main.humidity"
+              :windSpeed="Weather.currentWeather.wind.speed"
+              :windDeg="Weather.currentWeather.wind.deg"
+              :clouds="Weather.currentWeather.clouds.all"
             />
 
           </div>
 
-        </div>
-
-
-
+          <div class="mt-5 overflow-x-auto">
+            <ForecastDays
+              :forecastWeather="Weather.dailyWeather.list"
+            />
+          </div>
+</div>
+      </section>
     </div>
   </div>
 </template>
@@ -37,11 +43,17 @@
 import { useWeather } from '@/stores/useWeather.ts';
 import { onMounted } from 'vue'
 import CurrentWeatherDetails from '@/components/widgets/Weather/currentWeather/CurrentWeatherDetails.vue'
-const locationWeather = useWeather();
+import CurrentWeatherTemperature from '@/components/widgets/Weather/currentWeather/CurrentWeatherTemperature.vue'
+import CurrentWeatherIcon from '@/components/widgets/Weather/currentWeather/CurrentWeatherIcon.vue'
+import ForecastDays from '@/components/widgets/Weather/ForecastDays.vue'
+const Weather = useWeather();
+
+
 
 onMounted(() =>
   navigator.geolocation.getCurrentPosition(async (position) => {
-    await locationWeather.getCurrentWeather(position.coords)
+    await Weather.getCurrentWeather(position.coords)
+    await Weather.getDailyWeather(position.coords)
   }))
 </script>
 
