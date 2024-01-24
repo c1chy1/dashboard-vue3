@@ -20,7 +20,7 @@
                         class=" swappable-item transition-colors" />
         </div>
         <div class="col-span-7 box h-80">
-          <WidgetVideo
+          <WidgetCalendar
              @click="drag"
             :style="dragBg ? 'hidden' : ''"
             class="swappable-item transition-colors" />
@@ -48,13 +48,11 @@
 <script setup>
 import { Swappable, Plugins } from '@shopify/draggable';
 
-import WidgetGallery from '@/components/widgets/WidgetWeather.vue';
-import WidgetVideo from '@/components/widgets/WidgetCalendar.vue';
+import WidgetCalendar from '@/components/widgets/WidgetCalendar.vue';
 import WidgetCamera from '@/components/widgets/WidgetCamera.vue';
 import WidgetGame from '@/components/widgets/WidgetGame.vue';
 import WidgetMusic from '@/components/widgets/WidgetMusic.vue';
 import { onMounted , ref } from 'vue';
-import TheWeatherWidget from '@/components/widgets/Weather/TheWeatherWidget.vue'
 import WidgetWeather from '@/components/widgets/WidgetWeather.vue'
 
 

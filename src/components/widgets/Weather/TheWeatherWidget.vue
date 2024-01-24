@@ -58,6 +58,7 @@ onMounted(() =>
 </script>
 
 <style scoped>
+
 .fullpage-bg {
   background-image: linear-gradient(to bottom, #ADD8E6, #FFB6C1);
 }
