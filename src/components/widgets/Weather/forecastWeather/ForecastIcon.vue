@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-    import { ref, defineProps, onMounted } from 'vue';
+    import { ref, onMounted } from 'vue';
 
     const props = defineProps({
         icon: {

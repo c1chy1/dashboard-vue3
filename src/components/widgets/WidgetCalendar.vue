@@ -1,5 +1,6 @@
 <template>
-
+  <div class="center-content">
+    <div class="stripes-animated" />
     <VaCard style="width: 100%;" class="pt-4">
       <table class="table table-bordered mx-auto ">
 
@@ -12,7 +13,9 @@
         </tr>
       </table>
     </VaCard>
+  </div>
 </template>
+
 
 <script setup lang="ts">
 
@@ -24,6 +27,5 @@ const date = ref()
 
 date.value = new Date()
 
-
-
 </script>
+

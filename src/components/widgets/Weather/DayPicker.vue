@@ -19,7 +19,6 @@
 </template>
   
 <script setup>
-  import { defineProps } from 'vue';
 
   import ForecastDate from './forecastWeather/ForecastDate.vue'
   import ForecastHumidity from './forecastWeather/ForecastHumidity.vue'

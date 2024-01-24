@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-    import { ref, defineProps, onMounted, watchEffect } from 'vue';
+    import { ref, onMounted, watchEffect } from 'vue';
 
     const props = defineProps({
         weather: {

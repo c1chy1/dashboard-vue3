@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-   import { ref, defineProps, watchEffect } from 'vue';
+   import { ref, watchEffect } from 'vue';
 
     const props = defineProps({
         feelsLike: { type: Number, required: true },

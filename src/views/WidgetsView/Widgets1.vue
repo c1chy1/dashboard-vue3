@@ -2,7 +2,9 @@
 
 <section class=" bg-slate-200 ">
 
-  <main class="swappable-wrapper grid grid-cols-12 gap-4 w-full h-full p-4">    <div class="col-span-9 grid grid-rows-6 h-screen  gap-4">
+  <main class="swappable-wrapper grid grid-cols-12 gap-4 w-full h-full p-4">
+    <div class="col-span-9 grid grid-rows-6 h-screen  gap-4">
+
       <div class="row-span-4 box ">
         <WidgetWeather
           @click="drag"
@@ -47,7 +49,7 @@
 import { Swappable, Plugins } from '@shopify/draggable';
 
 import WidgetGallery from '@/components/widgets/WidgetWeather.vue';
-import WidgetVideo from '@/components/widgets/WidgetVideo.vue';
+import WidgetVideo from '@/components/widgets/WidgetCalendar.vue';
 import WidgetCamera from '@/components/widgets/WidgetCamera.vue';
 import WidgetGame from '@/components/widgets/WidgetGame.vue';
 import WidgetMusic from '@/components/widgets/WidgetMusic.vue';
