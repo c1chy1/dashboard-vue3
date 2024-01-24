@@ -9,6 +9,8 @@
                         @click="drag"
                        :style="dragBg ? 'hidden' : ''"
                        class="swappable-item transition-colors" />
+
+
       </div>
       <div class="row-span-2 grid grid-cols-12 gap-4">
         <div class="col-span-5 box">

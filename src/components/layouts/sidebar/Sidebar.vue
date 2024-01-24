@@ -16,7 +16,7 @@
 
       <VaCheckbox
         v-model="minimized"
-        class="mt-2"
+        class="mt-2 mx-auto"
       />
 
       <VaAccordion
@@ -99,7 +99,7 @@ const items = [
       { title: "Widgets2", icon: 'drafts',   path: "/dashboard/widgets2", },
       { title: "Widgets3", icon: 'settings',   path: "/dashboard/widgets3", },
     ],
-   isCollapsed: false
+    isCollapsed: false
   },
 
 ]

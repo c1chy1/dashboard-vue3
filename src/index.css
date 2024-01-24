@@ -145,7 +145,7 @@
 .draggable--over {
     border-width:2px;
     --tw-border-opacity: 1;
-    border-color:rgb(203 213 225 / var(--tw-border-opacity))
+    border-color: black;
 }
 .draggable--over .stripes-animated {
     display:block
@@ -153,7 +153,7 @@
 .draggable-source--placed {
     border-width:2px;
     --tw-border-opacity: 1;
-    border-color:rgb(210 139 24 / var(--tw-border-opacity));
+    border-color: black;
     --tw-bg-opacity: 1;
     background-color:rgb(242 204 142 / var(--tw-bg-opacity));
     transition-property:all;

@@ -1,5 +1,5 @@
 .draggable-mirror {
-  @apply border-2 border-primary bg-primary transition-scale bg-opacity-80 backdrop-blur-sm;
+  @apply border-2 transition-scale bg-opacity-80 backdrop-blur-sm;
 }
 
 .draggable--over {
@@ -11,5 +11,5 @@
 }
 
 .draggable-source--placed {
-  @apply border-2 border-primary-800 bg-primary-500 transition-all;
+  @apply border-2 transition-all;
 }

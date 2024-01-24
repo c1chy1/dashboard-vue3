@@ -8,8 +8,8 @@ import "vuestic-ui/css";
 import './index.css'
 const app = createApp(App)
 
-
-app.use(createPinia()).use(router).use(createVuestic())
+const pinia = createPinia();
+app.use(pinia).use(router).use(createVuestic())
 
 
 
