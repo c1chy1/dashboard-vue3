@@ -1,5 +1,5 @@
 <template>
-    <div v-if="weatherInfo" class="flex flex-col md:flex-row lg:flex-row xl:flex-row my-5">
+    <div v-if="weatherInfo" class="flex flex-col md:flex-row lg:flex-row xl:flex-row ">
         <div class="grid grid-cols-2 gap-x-3 px-4">
             <label class="font-light">{{ weatherInfo.feelsLike.label }}</label>
             <span class="font-bold">: {{ weatherInfo.feelsLike.value }} {{ weatherInfo.feelsLike.unit }}</span>

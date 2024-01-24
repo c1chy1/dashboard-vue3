@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full overflow-x-auto">
-    <div class="flex justify-between">
+  <div >
+    <div class="flex flex-wrap gap-y-4 justify-between">
       <div v-for="day in props.forecastWeather" :key="day.dt">
 
         <button :class="{

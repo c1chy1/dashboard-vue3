@@ -1,12 +1,13 @@
 <template>
-  <div class="fullpage-bg flex justify-center items-center ">
-    <div class="container mx-auto max-w-5xl p-5">
-      <h1 class="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+  <div class="fullpage-bg h-full flex flex-col overflow-y-scroll justify-center items-center ">
+
+      <h1 class="mt-4 text-6xl text-center font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
         Weather Widget
       </h1>
 
-      <section   v-if="Weather.currentWeather">
-        <div class="flex flex-wrap bg-white py-10 rounded-lg bg-opacity-30 px-4">
+      <section class="container mx-auto  px-12 "
+               v-if="Weather.currentWeather">
+        <div class="  flex flex-wrap bg-white  rounded-lg bg-opacity-30 p-4">
 
           <div class="flex flex-col md:flex-row w-full">
             <div class="flex flex-row">
@@ -36,7 +37,6 @@
 </div>
       </section>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
