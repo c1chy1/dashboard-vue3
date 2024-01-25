@@ -3,8 +3,8 @@
   <section >
 
 
-    <main class="swappable-wrapper md:grid md:grid-cols-12 gap-4 w-full h-full p-4 ">
-      <div class=" md:col-span-9 grid grid-rows-3 md:grid-rows-6  md:h-screen  gap-4">
+    <main class="swappable-wrapper md:grid md:grid-cols-12 gap-4 w-full h-full  ">
+      <div class=" md:col-span-9 grid grid-rows-3 md:grid-rows-6  md:h-screen xl:p-4 gap-4">
 
         <div class="row-span-4 box h-80 md:h-full">
           <WidgetWeather
@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-      <div class="col-span-3 grid grid-rows-6 gap-4 md:h-screen mt-6 lg:mt-0">
+      <div class="col-span-3 grid grid-rows-6 gap-4 md:h-screen xl:p-4 mt-6 lg:mt-0">
         <div class="row-span-2 box h-80 md:h-full">
           <WidgetGame
             @click="drag"
