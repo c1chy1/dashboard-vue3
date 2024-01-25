@@ -1,5 +1,5 @@
 <template>
-  <div class="center-content">
+  <div class="center-content ">
     <div class="stripes-animated" />
     <div class="widget-icon">
       <Music :size="50" />

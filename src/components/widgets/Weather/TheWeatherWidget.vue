@@ -1,45 +1,46 @@
 <template>
-  <div class="  fullpage-bg absolute h-full flex flex-col overflow-y-scroll justify-center items-center z-10">
+  <div class=" px-1  lg:px-6 fullpage-bg absolute h-full flex flex-col overflow-y-scroll justify-center items-center z-10">
 
 
 
-      <section class="container h-full mx-auto  px-12 "
-               v-if="Weather.currentWeather">
+    <section class="container h-full mx-auto  px-2 md:px-8 "
+             v-if="Weather.currentWeather">
 
-        <h1 class="my-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
-          Weather Widget
-        </h1>
-        <div class="  flex flex-wrap bg-white  rounded-lg bg-opacity-30 p-4">
+      <h1 class=" my-8 md:my-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
+        Weather Widget
+      </h1>
+      <div class="  flex flex-wrap bg-white  rounded-lg bg-opacity-30 lg:p-4 ">
 
-          <div class="flex flex-col md:flex-row w-full">
-            <div class="flex flex-row">
-              <CurrentWeatherIcon
-                :weather="Weather.currentWeather.weather"
-              />
-              <CurrentWeatherTemperature
-                :temperature="Weather.currentWeather.main.temp"
-              />
-            </div>
-            <CurrentWeatherDetails
-              :feelsLike="Weather.currentWeather.main.feels_like"
-              :pressure="Weather.currentWeather.main.pressure"
-              :humidity="Weather.currentWeather.main.humidity"
-              :windSpeed="Weather.currentWeather.wind.speed"
-              :windDeg="Weather.currentWeather.wind.deg"
-              :clouds="Weather.currentWeather.clouds.all"
-            />
+        <div class="flex flex-col md:flex-row w-full">
+          <CurrentWeatherIcon
+            :weather="Weather.currentWeather.weather"
+          />
+          <div class="flex flex-row align-center">
 
-          </div>
-
-          <div class="mt-5 overflow-x-auto">
-            <DayPicker
-              :forecastWeather="Weather.dailyWeather.list"
+            <CurrentWeatherTemperature
+              :temperature="Weather.currentWeather.main.temp"
             />
           </div>
-</div>
-      </section>
+          <CurrentWeatherDetails
+            :feelsLike="Weather.currentWeather.main.feels_like"
+            :pressure="Weather.currentWeather.main.pressure"
+            :humidity="Weather.currentWeather.main.humidity"
+            :windSpeed="Weather.currentWeather.wind.speed"
+            :windDeg="Weather.currentWeather.wind.deg"
+            :clouds="Weather.currentWeather.clouds.all"
+          />
+
+        </div>
+
+        <div class="overflow-x-auto md:overflow-x-hidden">
+          <DayPicker
+            :forecastWeather="Weather.dailyWeather.list"
+          />
+        </div>
+      </div>
+    </section>
     <div v-else class="stripes-animated" />
-    </div>
+  </div>
 </template>
 
 <script setup lang="ts">

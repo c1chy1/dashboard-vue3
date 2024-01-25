@@ -1,6 +1,6 @@
 <template>
-    <div v-if="weatherInfo" class="flex flex-col md:flex-row lg:flex-row xl:flex-row ">
-        <div class="grid grid-cols-2 gap-x-3 px-4">
+    <div v-if="weatherInfo" class="flex text-xs lg:text-base py-4">
+        <div class="grid grid-cols-2 text-center ">
             <label class="font-light">{{ weatherInfo.feelsLike.label }}</label>
             <span class="font-bold">: {{ weatherInfo.feelsLike.value }} {{ weatherInfo.feelsLike.unit }}</span>
 
@@ -11,7 +11,7 @@
             <span class="font-bold">: {{ weatherInfo.humidity.value }} {{ weatherInfo.humidity.unit }}</span>
         </div>
 
-        <div class="grid grid-cols-2 gap-x-3 px-4">
+        <div class="grid grid-cols-2">
             <label class="font-light">{{ weatherInfo.windSpeed.label }}</label>
             <span class="font-bold">: {{ weatherInfo.windSpeed.value }} {{ weatherInfo.windSpeed.unit }}</span>
 
