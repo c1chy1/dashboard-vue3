@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-row items-center">
-        <img :src="primaryForecastIcon" class="w-24 h-auto">
+    <div >
+        <img :src="primaryForecastIcon" class=" w-24 lg:w-32 h-auto mx-auto">
     </div>
 </template>
 
