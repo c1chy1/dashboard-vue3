@@ -15,7 +15,7 @@
       </div>
       <div class="row-span-2 grid grid-cols-12 gap-4 ">
         <div class="col-span-5 box ">
-          <WidgetCamera @click="drag"
+          <WidgetTemperature @click="drag"
                         :style="dragBg ? 'hidden' : ''"
                         class=" swappable-item transition-colors"
 
@@ -52,7 +52,7 @@
 import { Swappable, Plugins } from '@shopify/draggable';
 
 import WidgetCalendar from '@/components/widgets/WidgetCalendar.vue';
-import WidgetCamera from '@/components/widgets/WidgetCamera.vue';
+import WidgetTemperature from '@/components/widgets/WidgetTemperature.vue';
 import WidgetGame from '@/components/widgets/WidgetGame.vue';
 import WidgetMusic from '@/components/widgets/WidgetMusic.vue';
 import { onMounted , ref } from 'vue';
