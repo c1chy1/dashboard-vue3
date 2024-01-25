@@ -13,9 +13,9 @@
 <script setup>
 
 import TemperatureLineChart from '@/components/widgets/Weather/charts/TemperatureLineChart.vue'
+
 import { useWeather } from '@/stores/useWeather.ts'
 const Weather = useWeather();
-
 
 
 </script>
