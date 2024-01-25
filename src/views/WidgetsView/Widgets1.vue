@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-      <div class="col-span-3 grid grid-rows-6 gap-4 md:h-screen ">
+      <div class="col-span-3 grid grid-rows-6 gap-4 md:h-screen mt-6 lg:mt-0">
         <div class="row-span-2 box h-80 md:h-full">
           <WidgetGame
             @click="drag"

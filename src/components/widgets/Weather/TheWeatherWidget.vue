@@ -12,11 +12,11 @@
       <div class="  flex flex-wrap bg-white  rounded-lg bg-opacity-30 lg:p-4 ">
 
         <div class="flex flex-col md:flex-row w-full">
-          <CurrentWeatherIcon
-            :weather="Weather.currentWeather.weather"
-          />
-          <div class="flex flex-row align-center">
 
+          <div class="flex flex-row align-center pr-1">
+            <CurrentWeatherIcon
+              :weather="Weather.currentWeather.weather"
+            />
             <CurrentWeatherTemperature
               :temperature="Weather.currentWeather.main.temp"
             />

@@ -61,7 +61,9 @@
                 :active="isRouteActive(child, item)"
                 hover-color="#4338CA"
                 :text-color="isRouteActive(child, item) ? '#E0E7FF' : '#C4B5FD'"
+                @click="minimized=true"
               >
+
                 <VaSidebarItemContent>
                   <VaIcon :name="child.icon" />
                   <VaSidebarItemTitle v-if="!minimized" >{{ child.title }}</VaSidebarItemTitle>
@@ -96,18 +98,9 @@ const route = useRoute()
 const autoExpand = ref(false)
 let minimized = ref(false)
 
+import { useNavigation } from '@/stores/useNav'
 
-const items = [
-  { title: 'Dashboard' , icon : 'dashboard', active : true },
-  { title: 'Widgets', icon: 'mail', children: [
-      {   title: "Widgets1", icon: 'send' ,   path: "/dashboard/widgets1",  active : true },
-      { title: "Widgets2", icon: 'drafts',   path: "/dashboard/widgets2", },
-      { title: "Widgets3", icon: 'settings',   path: "/dashboard/widgets3", },
-    ],
-    isCollapsed: false
-  },
-
-]
+const items = useNavigation().navigation
 
 
 const isRouteActive = (item :any, expandMenu : any) => {

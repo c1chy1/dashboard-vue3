@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-row items-center">
-        <img v-if="primaryWeatherIcon" :src="primaryWeatherIcon" class="w-24 h-auto">
+    <div>
+        <img v-if="primaryWeatherIcon" :src="primaryWeatherIcon" class="w-56 h-auto">
         <span v-else>Icon Error!</span>
     </div>
 </template>

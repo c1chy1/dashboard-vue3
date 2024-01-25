@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span class="text-5xl font-normal">{{ roundedTemperature.value }}</span>
+        <span class="text-6xl font-normal">{{ roundedTemperature.value }}</span>
 
         <span class="text-2xl font-light align-top">{{ roundedTemperature.unit }}</span>
     </div>
