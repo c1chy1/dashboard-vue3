@@ -1,12 +1,14 @@
 <template>
   <div class="  fullpage-bg absolute h-full flex flex-col overflow-y-scroll justify-center items-center z-10">
 
-      <h1 class="mt-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
-        Weather Widget
-      </h1>
 
-      <section class="container mx-auto  px-12 "
+
+      <section class="container h-full mx-auto  px-12 "
                v-if="Weather.currentWeather">
+
+        <h1 class="my-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
+          Weather Widget
+        </h1>
         <div class="  flex flex-wrap bg-white  rounded-lg bg-opacity-30 p-4">
 
           <div class="flex flex-col md:flex-row w-full">
