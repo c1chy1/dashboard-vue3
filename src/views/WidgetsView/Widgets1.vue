@@ -1,6 +1,6 @@
 <template>
 
-<section class=" ">
+<section >
 
   <main class="swappable-wrapper grid grid-cols-12 gap-4 w-full h-full p-4 ">
     <div class="col-span-9 grid grid-rows-6 h-screen  gap-4">

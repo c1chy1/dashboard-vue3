@@ -4,11 +4,13 @@
 
 
     <VaSidebar
-      class="sidebar colored-sidebar"
+
+      class="sidebar"
       :class="{ 'sidebar--expanded': !minimized }"
       text-color="#A5B4FC"
       :style="{
-        '--va-sidebar-menu-overflow-y': 'hidden',
+        '--va-sidebar-menu-overflow-x': 'hidden',
+          '--va-sidebar-menu-overflow-y': 'hidden',
       }"
       color="#312E81"
       :minimized="minimized"
@@ -25,9 +27,10 @@
         <template v-for="item in items">
           <VaCollapse
 
+
             v-if="item.children"
             v-model="item.isCollapsed"
-            icon="github"
+            :icon="item.icon"
             :key="item.title + 'collapse'"
           >
             <template #header="{ value: isCollapsed }">
@@ -36,7 +39,7 @@
                 active-color="#4338CA"
                 active-class="sidebar-item--active-custom"
                 :active="isRouteActive(item, item)"
-
+                color="#A5B4FC"
               >
                 <VaSidebarItemContent>
                   <VaIcon :name="item.icon" />
@@ -74,7 +77,8 @@
           >
             <VaSidebarItemContent>
               <VaIcon :name="item.icon" />
-              <VaSidebarItemTitle  v-if="!minimized">{{ item.title }}</VaSidebarItemTitle>
+              <VaSidebarItemTitle
+                v-if="!minimized">{{ item.title }}</VaSidebarItemTitle>
             </VaSidebarItemContent>
           </VaSidebarItem>
         </template>
@@ -90,6 +94,7 @@
 
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
+
 const route = useRoute()
 const autoExpand = ref(false)
 let minimized = ref(false)
@@ -138,6 +143,7 @@ const isRouteActive = (item :any, expandMenu : any) => {
   cursor: pointer;
 
 }
+.va-sidebar__item
 
 /* override UI lib */
 .va-collapse__header__content {
@@ -161,16 +167,15 @@ const isRouteActive = (item :any, expandMenu : any) => {
 
 .sidebar {
   width: var(--sidebar-width);
-  height: 100vh;
+  height: 100%;
   flex-shrink: 0;
   overflow-x:auto ;
 }
 
 .va-checkbox {
-  --va-checkbox-background: #a28d8d;
+  --va-checkbox-background: #C4B5FD;
   --va-checkbox-square-border: 1px black solid;
 }
-
 
 .va-sidebar__menu {
 

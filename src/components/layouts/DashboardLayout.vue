@@ -34,11 +34,12 @@ function checkIsSmallScreen() {
 .main-body {
     display: flex;
     height: calc(100vh - var(--header-height));
+  overflow-x: hidden;
 }
 
 .content {
     flex-grow: 1;
-    overflow-y: auto;
+    overflow: auto;
     background-color: var(--background-color);
 }
 </style>
