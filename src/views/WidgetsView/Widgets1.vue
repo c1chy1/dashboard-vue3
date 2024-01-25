@@ -18,8 +18,6 @@
           <WidgetTemperature @click="drag"
                         :style="dragBg ? 'hidden' : ''"
                         class=" swappable-item transition-colors"
-
-
           />
         </div>
         <div class="col-span-7 box ">

@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { onMounted , onBeforeMount} from 'vue'
+import { onMounted } from 'vue'
 import TemperatureLineChart from '@/components/widgets/Weather/charts/TemperatureLineChart.vue'
 import { useWeather } from '@/stores/useWeather.ts'
 const Weather = useWeather();
