@@ -9,8 +9,7 @@
       :class="{ 'sidebar--expanded': !minimized }"
       text-color="#A5B4FC"
       :style="{
-        '--va-sidebar-menu-overflow-x': 'hidden',
-          '--va-sidebar-menu-overflow-y': 'hidden',
+        '--va-sidebar-menu-overflow': 'hidden',
       }"
       color="#312E81"
       :minimized="minimized"
@@ -77,8 +76,7 @@
           >
             <VaSidebarItemContent>
               <VaIcon :name="item.icon" />
-              <VaSidebarItemTitle
-                v-if="!minimized">{{ item.title }}</VaSidebarItemTitle>
+              <VaSidebarItemTitle  v-if="!minimized">{{ item.title }}</VaSidebarItemTitle>
             </VaSidebarItemContent>
           </VaSidebarItem>
         </template>
@@ -94,14 +92,13 @@
 
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
-
 const route = useRoute()
 const autoExpand = ref(false)
 let minimized = ref(false)
 
 
 const items = [
-  { title: 'Dashboard', icon: 'dashboard' , active : true },
+  { title: 'Dashboard' , icon : 'dashboard', active : true },
   { title: 'Widgets', icon: 'mail', children: [
       {   title: "Widgets1", icon: 'send' ,   path: "/dashboard/widgets1",  active : true },
       { title: "Widgets2", icon: 'drafts',   path: "/dashboard/widgets2", },
@@ -143,7 +140,6 @@ const isRouteActive = (item :any, expandMenu : any) => {
   cursor: pointer;
 
 }
-.va-sidebar__item
 
 /* override UI lib */
 .va-collapse__header__content {
@@ -158,8 +154,6 @@ const isRouteActive = (item :any, expandMenu : any) => {
   align-items: center;
 }
 
-
-
 .va-collapse__body {
   margin-top: 0 !important;
 }
@@ -173,9 +167,10 @@ const isRouteActive = (item :any, expandMenu : any) => {
 }
 
 .va-checkbox {
-  --va-checkbox-background: #C4B5FD;
+  --va-checkbox-background: #a28d8d;
   --va-checkbox-square-border: 1px black solid;
 }
+
 
 .va-sidebar__menu {
 

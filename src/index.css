@@ -19,6 +19,7 @@
         transform:translate3d(0,-396px,0)
     }
 }
+
 .box {
     border-radius:.5rem;
     --tw-bg-opacity: 1;
@@ -159,6 +160,10 @@
     transition-property:all;
     transition-timing-function:cubic-bezier(.4,0,.2,1);
     transition-duration:.15s
+}
+.va-collapse__body-wrapper {
+    overflow: hidden!important;
+
 }
 
 

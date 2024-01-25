@@ -15,7 +15,6 @@ import TheWeatherWidget from '@/components/widgets/Weather/TheWeatherWidget.vue'
 <style lang="scss">
 .main {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
-  height: 100vh;
 }
 
 .search-bar {
