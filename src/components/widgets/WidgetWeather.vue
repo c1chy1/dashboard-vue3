@@ -2,7 +2,7 @@
   <div class="center-content">
 
 
-    <div class="stripes-animated" />
+    <div class="stripes-animated z-50" />
     <TheWeatherWidget/>
 
   </div>

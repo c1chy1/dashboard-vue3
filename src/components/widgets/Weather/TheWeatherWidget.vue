@@ -1,5 +1,5 @@
 <template>
-  <div class="fullpage-bg h-full flex flex-col overflow-y-scroll justify-center items-center ">
+  <div class="  fullpage-bg absolute h-full flex flex-col overflow-y-scroll justify-center items-center z-10">
 
       <h1 class="mt-4 text-6xl text-center font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
         Weather Widget
@@ -36,6 +36,7 @@
           </div>
 </div>
       </section>
+    <div v-else class="stripes-animated" />
     </div>
 </template>
 

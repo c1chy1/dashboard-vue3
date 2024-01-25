@@ -1,8 +1,8 @@
 <template>
 
-<section class=" bg-slate-200 ">
+<section class=" ">
 
-  <main class="swappable-wrapper grid grid-cols-12 gap-4 w-full h-full p-4">
+  <main class="swappable-wrapper grid grid-cols-12 gap-4 w-full h-full p-4 ">
     <div class="col-span-9 grid grid-rows-6 h-screen  gap-4">
 
       <div class="row-span-4 box ">
@@ -14,12 +14,15 @@
 
       </div>
       <div class="row-span-2 grid grid-cols-12 gap-4 ">
-        <div class="col-span-5 box h-80">
+        <div class="col-span-5 box ">
           <WidgetCamera @click="drag"
                         :style="dragBg ? 'hidden' : ''"
-                        class=" swappable-item transition-colors" />
+                        class=" swappable-item transition-colors"
+
+
+          />
         </div>
-        <div class="col-span-7 box h-80">
+        <div class="col-span-7 box ">
           <WidgetCalendar
              @click="drag"
             :style="dragBg ? 'hidden' : ''"
@@ -75,3 +78,8 @@ onMounted(() => {
   });
 });
 </script>
+<style scoped>
+
+
+
+</style>

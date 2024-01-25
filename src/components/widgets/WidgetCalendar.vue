@@ -1,7 +1,9 @@
 <template>
+  <div class="center-content">
 
-  <VaCard style="width: 100%;" class="pt-4">
-    <table class="table table-bordered mx-auto ">
+    <div class="stripes-animated z-30" />
+  <VaCard >
+    <table class="table table-bordered mx-auto">
 
       <tr>
         <td>
@@ -12,6 +14,7 @@
       </tr>
     </table>
   </VaCard>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -21,9 +24,6 @@ import { ref } from 'vue'
 import { VaDatePicker } from 'vuestic-ui'
 
 const date = ref()
-
 date.value = new Date()
-
-
 
 </script>

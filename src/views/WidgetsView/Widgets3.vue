@@ -1,28 +1,26 @@
 <template>
+  <div class="center-content">
+    <div class="stripes-animated" />
 
-    <VaCard style="width: 100%;" class="pt-4">
-      <table class="table table-bordered mx-auto ">
 
-        <tr>
-          <td>
-            <VaDatePicker
-              v-model="date"
-            />
-          </td>
-        </tr>
-      </table>
-    </VaCard>
+    <TemperatureLineChart :max-temperatures="Weather.maxTemperatures"/>
+  </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import { onMounted } from 'vue'
+import TemperatureLineChart from '@/components/widgets/Weather/charts/TemperatureLineChart.vue'
+import { useWeather } from '@/stores/useWeather.ts'
+const Weather = useWeather();
 
 
-import { ref } from 'vue'
-import { VaDatePicker } from 'vuestic-ui'
 
-const date = ref()
 
-date.value = new Date()
+onMounted(() => {
+  navigator.geolocation.getCurrentPosition(async (position) => {
+ await Weather.getDailyWeather(position.coords)
+  })
+})
 
 
 

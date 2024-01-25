@@ -38,8 +38,6 @@ export const useNavigation =
         }])
       }),
       getters: {
-
-
         menu(state) {
           return state.navigation
         }

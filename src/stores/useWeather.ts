@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type { WeatherData , DayWeather } from '@/types/types.ts'
+import type { WeatherData, DayWeather } from '@/types/types.ts'
 
 
 
@@ -10,8 +10,13 @@ export const useWeather = defineStore('useWeather', {
   state: () => ({
     currentWeather: null as null | WeatherData,
     dailyWeather:  {} as DayWeather,
+    maxTemperatures : []
   }),
-
+  getters: {
+    list(state) {
+      return state.dailyWeather.list
+    }
+  },
   actions: {
     // Method to get the current weather data from OpenWeather API
     async getCurrentWeather(coords: {longitude: number, latitude: number}) {
@@ -30,12 +35,17 @@ export const useWeather = defineStore('useWeather', {
       const dayWeather: DayWeather | null = response as DayWeather;
 
       dayWeather.list = dayWeather.list.filter(
-        (item, index) => index === 0 || index % 8 === 7
+        (item, index) => index === 0 || index % 9 === 8
       );
       this.dailyWeather =  dayWeather
 
       console.log(this.dailyWeather)
 
+      this.maxTemperatures =  dayWeather.list.map( (item) => {
+        if( item.main.temp_max ) return item.main.temp_max ;
+      })
+
+      console.log(this.maxTemperatures)
       }
 
 
