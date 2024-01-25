@@ -1,6 +1,6 @@
 <template>
-  <div class="center-content">
-    <div class="stripes-animated" />
+  <div class="h-screen">
+    <div class="" />
 
 
     <TemperatureLineChart :max-temperatures="Weather.maxTemperatures"/>

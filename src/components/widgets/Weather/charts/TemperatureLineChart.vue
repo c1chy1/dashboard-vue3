@@ -1,5 +1,7 @@
 <template>
   <div class="w-full">
+
+
     <canvas class="w-full" ref="chartCanvas"></canvas>
   </div>
 </template>

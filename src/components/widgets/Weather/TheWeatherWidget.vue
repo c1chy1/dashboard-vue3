@@ -1,7 +1,7 @@
 <template>
   <div class="  fullpage-bg absolute h-full flex flex-col overflow-y-scroll justify-center items-center z-10">
 
-      <h1 class="mt-4 text-6xl text-center font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
+      <h1 class="mt-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
         Weather Widget
       </h1>
 
