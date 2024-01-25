@@ -167,7 +167,7 @@ const isRouteActive = (item :any, expandMenu : any) => {
 
 .sidebar {
   width: var(--sidebar-width);
-  height: 100%;
+  height: 100vh;
   flex-shrink: 0;
   overflow-x:auto ;
 }
