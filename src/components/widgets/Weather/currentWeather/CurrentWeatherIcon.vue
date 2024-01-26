@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img v-if="primaryWeatherIcon" :src="primaryWeatherIcon" class="w-56 h-auto">
+        <img v-if="primaryWeatherIcon" :src="primaryWeatherIcon" class="w-32 lg:w-40 mx-auto h-auto">
         <span v-else>Icon Error!</span>
     </div>
 </template>

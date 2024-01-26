@@ -2,7 +2,7 @@
   <div class="w-full">
 
 
-    <canvas class="w-full" ref="chartCanvas"></canvas>
+    <canvas class="w-full h-32" ref="chartCanvas"></canvas>
   </div>
 </template>
 
@@ -56,7 +56,8 @@ function createChart() {
           pointBackgroundColor: 'rgba(75, 192, 192, 1)',
           pointBorderColor: '#fff',
           pointBorderWidth: 1,
-          pointRadius: 4
+          pointRadius: 4,
+          height: '100%'
         }
       ]
     },
@@ -87,6 +88,5 @@ function getMaxTemperatureLabels() {
 <style scoped>
   canvas {
     width: 100%!important;
-    height: 200px;
   }
 </style>

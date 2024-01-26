@@ -1,15 +1,15 @@
 <template>
-  <div class=" px-1  lg:px-6 fullpage-bg absolute h-full flex flex-col overflow-y-scroll justify-center items-center z-10">
+  <div class=" px-1  lg:px-6 fullpage-bg absolute h-full overflow-y-scroll justify-center items-center z-10">
 
 
 
-    <section class="container h-full mx-auto  px-2 md:px-8 "
+    <section class="container mx-auto  px-2 md:px-8 "
              v-if="Weather.currentWeather">
 
       <h1 class=" my-8 md:my-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
         Weather Widget
       </h1>
-      <div class="  flex flex-wrap bg-white  rounded-lg bg-opacity-30 lg:p-4 ">
+      <div class="  flex flex-wrap bg-white  rounded-lg bg-opacity-30 lg:p-4 lg:pb-8">
 
         <div class="flex flex-col md:flex-row w-full">
 

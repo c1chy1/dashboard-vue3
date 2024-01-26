@@ -3,10 +3,11 @@
   <section >
 
 
-    <main class="swappable-wrapper md:grid md:grid-cols-12 gap-4 w-full h-full  ">
-      <div class=" md:col-span-9 grid grid-rows-3 md:grid-rows-6  md:h-screen xl:p-4 gap-4">
+    <main class="swappable-wrapper lg:grid lg:grid-cols-12 gap-x-4 w-full h-full ">
 
-        <div class="row-span-4 box h-80 md:h-full">
+      <div class=" lg:col-span-9 grid grid-rows-3 lg:grid-rows-6 lg:pt-3 lg:pl-3 lg:pb-3 gap-y-4  lg:h-screen  ">
+
+        <div class="row-span-4 box h-80 lg:h-full">
           <WidgetWeather
             @click="drag"
             :style="dragBg ? 'hidden' : ''"
@@ -14,15 +15,15 @@
           </WidgetWeather>
 
         </div>
-        <div class="row-span-2 flex flex-col md:grid grid-cols-12 gap-4 ">
-          <div class="col-span-5 box h-80 md:h-full">
+        <div class="row-span-10 flex flex-col  lg:grid grid-cols-12 gap-4  ">
+          <div class="col-span-5 box h-80 lg:h-full">
 
             <WidgetTemperature @click="drag"
                                :style="dragBg ? 'hidden' : ''"
                                class=" swappable-item transition-colors"
             />
           </div>
-          <div class="col-span-7 box h-80 md:h-full">
+          <div class="col-span-7 box h-80 lg:h-full ">
             <WidgetCalendar
               @click="drag"
               :style="dragBg ? 'hidden' : ''"
@@ -30,14 +31,14 @@
           </div>
         </div>
       </div>
-      <div class="col-span-3 grid grid-rows-6 gap-4 md:h-screen xl:p-4 mt-6 lg:mt-0">
-        <div class="row-span-2 box h-80 md:h-full">
+      <div class="col-span-3 grid grid-rows-6  lg:h-screen gap-y-4 lg:pt-3 lg:pb-3 lg:pr-3">
+        <div class="row-span-2 box h-80 lg:h-full">
           <WidgetGame
             @click="drag"
             :style="dragBg ? 'hidden' : ''"
             class="swappable-item transition-colors" />
         </div>
-        <div class="row-span-4 box h-80 md:h-full">
+        <div class="row-span-4 box h-80 lg:h-full">
           <WidgetMusic
             @click="drag"
             :style="dragBg ? 'hidden' : ''"
